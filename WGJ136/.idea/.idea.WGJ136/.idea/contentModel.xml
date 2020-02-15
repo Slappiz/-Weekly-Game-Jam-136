@@ -7,12 +7,15 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="CollisionDetection.cs" t="Include" />
-          <e p="InputHandler.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="Goal.cs" t="Include" />
           <e p="Movement" t="Include">
+            <e p="CollisionDetection.cs" t="Include" />
+            <e p="InputHandler.cs" t="Include" />
             <e p="Jump.cs" t="Include" />
             <e p="Walk.cs" t="Include" />
           </e>
+          <e p="StayInView.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
