@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4249308762527340021}
   - component: {fileID: 8842316807611356326}
   - component: {fileID: 6617970779408558314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: headCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4249308762527340021
 Transform:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 6546619317112308130}
   - component: {fileID: 6546619317112308131}
   - component: {fileID: 5796685006035445738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 998315785aa97b449bf7bc23be8d8e63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,7 +184,8 @@ GameObject:
   - component: {fileID: 6546619317644670284}
   - component: {fileID: 6546619317644670287}
   - component: {fileID: 6546619317644670285}
-  m_Layer: 0
+  - component: {fileID: 1561896955246675642}
+  m_Layer: 9
   m_Name: playerBase
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -270,6 +271,33 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   jump: 0
+  reverseFlipper: 0
+--- !u!114 &1561896955246675642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546619317644670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf274927c7a2864ea54997fbe9decae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionRadius: 0.01
+  bottomOffset: {x: 0, y: -0.025}
+  rightOffset: {x: 0.025, y: 0}
+  leftOffset: {x: -0.025, y: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  animator: {fileID: 5796685006035445738}
+  onGround: 0
+  onWall: 0
+  onPlayer: 0
 --- !u!1 &7923237846644270830
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,13 +309,13 @@ GameObject:
   - component: {fileID: 4383035009663572736}
   - component: {fileID: 7581374003044991755}
   - component: {fileID: 8333310446077500969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4383035009663572736
 Transform:
   m_ObjectHideFlags: 0

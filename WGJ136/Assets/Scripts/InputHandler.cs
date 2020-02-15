@@ -12,15 +12,20 @@ public class InputHandler : MonoBehaviour
     public KeyCode moveRight;
     public KeyCode jump;
 
+    [Header("Settings")] 
+    public bool reverseFlipper;
+    
     private Jump _jumpScript;
     private Walk _walkScript;
     //private Animator _animator;
     private Rigidbody2D _rigidbody;
+    private SpriteRenderer _spriteRenderer;
     
     private void Awake()
     {
         //_animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
         _jumpScript = new Jump(_rigidbody);
         _walkScript = new Walk(_rigidbody);
@@ -49,11 +54,16 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKey(moveLeft))
         {
             direction.x -= 1;
+            if (reverseFlipper) _spriteRenderer.flipX = true;
+            else _spriteRenderer.flipX = false;
         }
         
         if (Input.GetKey(moveRight))
         {
             direction.x += 1;
+            
+            if (reverseFlipper) _spriteRenderer.flipX = false;
+            else _spriteRenderer.flipX = true;
         }
         
         _walkScript.Move(direction);

@@ -7,31 +7,35 @@ public class GroundCheckAnimationController : MonoBehaviour
 {
     public Animator animator;
 
+    private void Awake()
+    {
+        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsCarry", false);
+        animator.SetBool("IsRiding", false);
+        animator.SetBool("IsHappy", false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TriggerEnter");
-        if (other.gameObject.tag == "Untagged")
+        if (other.gameObject.CompareTag("Untagged"))
         {
             animator.SetBool("IsJumping", false);
         }
-        else if (other.gameObject.tag == "Player")
+        else if (other.gameObject.CompareTag("Player"))
         {
-            animator.SetBool("IsJumping", false);
             animator.SetBool("IsRiding", true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("TriggerExit");
-        if (other.gameObject.tag == "Untagged")
+        if (other.gameObject.CompareTag("Untagged"))
         {
             animator.SetBool("IsJumping", true);
         }
         else if (other.gameObject.tag == "Player")
         {
-            animator.SetBool("IsRiding", false);
-            animator.SetBool("IsJumping", true);
+            animator.SetBool("IsRiding", false); ;
         }
     }
 }

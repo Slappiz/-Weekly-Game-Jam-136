@@ -8,8 +8,7 @@ public class HeadCheckAnimationController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TriggerEnter");
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             animator.SetBool("IsCarry", true); ;
         }
@@ -17,7 +16,7 @@ public class HeadCheckAnimationController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             animator.SetBool("IsCarry", false); ;
         }
