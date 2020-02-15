@@ -86,10 +86,16 @@ public class InputHandler : MonoBehaviour
     
     void SetAnimations()
     {
-        if (_collisionDetection.onGround){ _animator.SetBool("IsJumping", false); }
+        if (_collisionDetection.onGround)
+        {
+            if(_animator.GetBool("IsJumping")) _animator.SetBool("IsJumping", false); 
+        }
         else _animator.SetBool("IsJumping", true);
-        
-        if (_collisionDetection.onPlayer){ _animator.SetBool("IsRiding", true); }
+
+        if (_collisionDetection.onPlayer)
+        {
+            if(!_animator.GetBool("IsRiding")) _animator.SetBool("IsRiding", true);
+        }
         else _animator.SetBool("IsRiding", false);
         
         if (_collisionDetection.belowPlayer){ _animator.SetBool("IsCarry", true); }
