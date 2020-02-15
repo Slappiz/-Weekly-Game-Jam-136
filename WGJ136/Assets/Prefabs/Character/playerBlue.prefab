@@ -82,5 +82,10 @@ PrefabInstance:
       propertyPath: jump
       value: 119
       objectReference: {fileID: 0}
+    - target: {fileID: 5796685006035445738, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b32becb17407c4d438b39e9c048866ac, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d, type: 3}

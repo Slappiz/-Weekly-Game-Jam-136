@@ -7,6 +7,8 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="GroundCheckAnimationController.cs" t="Include" />
+          <e p="HeadCheckAnimationController.cs" t="Include" />
           <e p="InputHandler.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="Jump.cs" t="Include" />
