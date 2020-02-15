@@ -213,11 +213,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionRadius: 0.01
-  collisionRadiusGround: 0.027
-  bottomOffset: {x: 0, y: -0.025}
-  rightOffset: {x: 0.025, y: 0}
-  leftOffset: {x: -0.025, y: 0}
-  topOffset: {x: 0, y: 0.025}
+  collisionRadiusGround: 0.022
+  bottomOffset: {x: 0, y: -0.023}
+  rightOffset: {x: 0.023, y: 0}
+  leftOffset: {x: -0.023, y: 0}
+  topOffset: {x: 0, y: 0.023}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -231,3 +231,4 @@ MonoBehaviour:
   onWall: 0
   onPlayer: 0
   belowPlayer: 0
+  hideAnimDetectors: 0

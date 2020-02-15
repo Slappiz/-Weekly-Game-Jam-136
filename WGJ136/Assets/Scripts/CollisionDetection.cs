@@ -18,12 +18,12 @@ public class CollisionDetection : MonoBehaviour
     public bool onWall = false;
     public bool onPlayer = false;
     public bool belowPlayer = false;
-    
+    public bool hideAnimDetectors = true;
     void Update()
     {
         var position = transform.position;
         
-        onGround = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadiusGround, groundLayer);
+        onGround = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadius, groundLayer);
         onPlayer = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadiusGround, playerLayer);
         belowPlayer = Physics2D.OverlapCircle((Vector2) position + topOffset, collisionRadiusGround, playerLayer);
         onWall = Physics2D.OverlapCircle((Vector2) position + leftOffset, collisionRadius, wallLayer)
@@ -37,9 +37,14 @@ public class CollisionDetection : MonoBehaviour
         var position = transform.position;
         
         //var positions = new Vector2[] {bottomOffset, leftOffset, rightOffset};
-        Gizmos.DrawSphere((Vector2)position + topOffset, collisionRadiusGround);
-        Gizmos.DrawSphere((Vector2)position + bottomOffset, collisionRadiusGround);
+        Gizmos.DrawSphere((Vector2)position + topOffset, collisionRadius);
+        Gizmos.DrawSphere((Vector2)position + bottomOffset, collisionRadius);
         Gizmos.DrawSphere((Vector2)position + leftOffset, collisionRadius);
         Gizmos.DrawSphere((Vector2)position + rightOffset, collisionRadius);
+
+        if (hideAnimDetectors) return;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere((Vector2)position + topOffset, collisionRadiusGround);
+        Gizmos.DrawSphere((Vector2)position + bottomOffset, collisionRadiusGround);
     }
 }
