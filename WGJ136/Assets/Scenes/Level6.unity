@@ -1329,6 +1329,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aca0b8ea0d52464baaf573ae2e1b4b3, type: 3}
+--- !u!114 &1772304299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934898976514826623, guid: 9aca0b8ea0d52464baaf573ae2e1b4b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1772304298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b037eda0fbca74091e866f4d926d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1889522170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1398,6 +1410,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9642114220bc03e4680869e88f8d67cb, type: 3}
+--- !u!114 &1889522171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 799771788120302947, guid: 9642114220bc03e4680869e88f8d67cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889522170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b037eda0fbca74091e866f4d926d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909845851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redGoal: {fileID: 666948414}
   blueGoal: {fileID: 1674307718}
+  playerBlue: {fileID: 1772304299}
+  playerRed: {fileID: 1889522171}
 --- !u!1001 &5181215374459875549
 PrefabInstance:
   m_ObjectHideFlags: 0

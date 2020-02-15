@@ -101,4 +101,9 @@ public class InputHandler : MonoBehaviour
         if (_collisionDetection.belowPlayer){ _animator.SetBool("IsCarry", true); }
         else _animator.SetBool("IsCarry", false);
     }
+
+    public void SetHappy()
+    {
+        _animator.SetBool("IsHappy", true);
+    }
 }
