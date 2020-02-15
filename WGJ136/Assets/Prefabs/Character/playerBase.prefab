@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6546619317112308130}
   - component: {fileID: 6546619317112308131}
+  - component: {fileID: 5796685006035445738}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5796685006035445738
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546619317112308128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6546619317644670275
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +113,6 @@ GameObject:
   - component: {fileID: 6546619317644670284}
   - component: {fileID: 6546619317644670287}
   - component: {fileID: 6546619317644670285}
-  - component: {fileID: 4946531245732797813}
   m_Layer: 0
   m_Name: playerBase
   m_TagString: Untagged
@@ -178,22 +197,3 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   jump: 0
---- !u!95 &4946531245732797813
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6546619317644670275}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

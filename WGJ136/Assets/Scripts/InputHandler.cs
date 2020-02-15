@@ -8,33 +8,34 @@ using WGJ136.Movement;
 public class InputHandler : MonoBehaviour
 {
     public KeyCode moveLeft;
-
     public KeyCode moveRight;
-
     public KeyCode jump;
 
-    public Jump jumpScript;
-
-    public Walk walkScript;
-
+    private Jump _jumpScript;
+    private Walk _walkScript;
+    private Animator _animator;
+    private Rigidbody2D _rigidbody;
     private void Awake()
     {
-        jumpScript = new Jump(GetComponent<Rigidbody2D>());
-        walkScript = new Walk(GetComponent<Rigidbody2D>());
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _jumpScript = new Jump(_rigidbody);
+        _walkScript = new Walk(_rigidbody);
+        _animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         CheckMove();
         CheckJump();
-        jumpScript.Update();
+        _jumpScript.Update();
     }
 
     private void CheckJump()
     {
         if (Input.GetKeyDown(jump))
         {
-            jumpScript.StartJump();
+            _animator.SetBool("IsJumping", true);
+            _jumpScript.StartJump();
         }
     }
 
@@ -52,6 +53,6 @@ public class InputHandler : MonoBehaviour
             direction.x += 1;
         }
         
-        walkScript.Move(direction);
+        _walkScript.Move(direction);
     }
 }
