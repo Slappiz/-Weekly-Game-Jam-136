@@ -7,26 +7,29 @@ public class CollisionDetection : MonoBehaviour
 {
     [Header("Collision")]
     public float collisionRadius = 0.1f;
-    public Vector2 bottomOffset, rightOffset, leftOffset;
+    public float collisionRadiusGround = 0.05f;
+    public Vector2 bottomOffset, rightOffset, leftOffset, topOffset;
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
     public LayerMask playerLayer;
 
-    [Header("Animator")] 
-    public Animator animator;
-    
     [Header("Debug Helper")]
     public bool onGround = false;
     public bool onWall = false;
     public bool onPlayer = false;
+    public bool belowPlayer = false;
+    
     void Update()
     {
         var position = transform.position;
         
-        onGround = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadius, groundLayer);
-        onPlayer = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadius, playerLayer);
-        onWall = Physics2D.OverlapCircle((Vector2) position + leftOffset, collisionRadius, groundLayer)
-                 || Physics2D.OverlapCircle((Vector2) position + rightOffset, collisionRadius, groundLayer);
+        onGround = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadiusGround, groundLayer);
+        onPlayer = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadiusGround, playerLayer);
+        belowPlayer = Physics2D.OverlapCircle((Vector2) position + topOffset, collisionRadiusGround, playerLayer);
+        onWall = Physics2D.OverlapCircle((Vector2) position + leftOffset, collisionRadius, wallLayer)
+                 || Physics2D.OverlapCircle((Vector2) position + rightOffset, collisionRadius, wallLayer);
     }
+    
 
     private void OnDrawGizmos()
     {
@@ -34,8 +37,8 @@ public class CollisionDetection : MonoBehaviour
         var position = transform.position;
         
         //var positions = new Vector2[] {bottomOffset, leftOffset, rightOffset};
-        
-        Gizmos.DrawSphere((Vector2)position + bottomOffset, collisionRadius);
+        Gizmos.DrawSphere((Vector2)position + topOffset, collisionRadiusGround);
+        Gizmos.DrawSphere((Vector2)position + bottomOffset, collisionRadiusGround);
         Gizmos.DrawSphere((Vector2)position + leftOffset, collisionRadius);
         Gizmos.DrawSphere((Vector2)position + rightOffset, collisionRadius);
     }

@@ -97,5 +97,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1561896955246675642, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d, type: 3}

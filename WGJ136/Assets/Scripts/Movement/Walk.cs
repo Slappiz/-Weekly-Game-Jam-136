@@ -5,7 +5,7 @@ namespace WGJ136.Movement
 {
     public class Walk
     {
-        private float speed = 1f;
+        private float speed = 150f;
 
         private Rigidbody2D rb;
 
@@ -16,7 +16,7 @@ namespace WGJ136.Movement
     
         public void Move(Vector2 direction)
         {
-            rb.velocity = (new Vector2(direction.x * speed, rb.velocity.y));
+            rb.velocity = (new Vector2(direction.x * speed * Time.deltaTime, rb.velocity.y));
         }
     }   
 }
