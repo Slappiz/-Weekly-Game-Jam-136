@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public Goal redGoal;
     public Goal blueGoal;
 
+    private void Start()
+    {
+        SoundManager.instance.Play("Lunar");
+    }
+
     private void FixedUpdate()
     {
         if (redGoal.onPlayer && blueGoal.onPlayer)
