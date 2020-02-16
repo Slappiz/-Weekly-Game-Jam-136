@@ -23,6 +23,11 @@ public class InputHandler : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private CollisionDetection _collisionDetection;
+
+    private float jumpPressRemember = 0f;
+    private const float jumpPressedRememberTime = 0.2f;
+    private float groundRemember = 0f;
+    private const float groundRememberTimer = 0.2f;
     
     private void Awake()
     {
@@ -48,16 +53,31 @@ public class InputHandler : MonoBehaviour
     {
         if (!_collisionDetection.onGround && _collisionDetection.onWall)
         {
-            _rigidbody.velocity = new Vector2(
-                _rigidbody.velocity.x, 
-                _rigidbody.velocity.y - slideSpeed * Time.deltaTime);
+            // _rigidbody.velocity = new Vector2(
+            //     _rigidbody.velocity.x, 
+            //     _rigidbody.velocity.y - slideSpeed * Time.deltaTime);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0f);
         }
     }
 
     private void CheckJump()
     {
-        if (Input.GetKeyDown(jump) && (_collisionDetection.onGround || _collisionDetection.onPlayer))
+        jumpPressRemember -= Time.deltaTime;
+        if (Input.GetKeyDown(jump))
         {
+            jumpPressRemember = jumpPressedRememberTime;
+        }
+
+        groundRemember -= Time.deltaTime;
+        if (_collisionDetection.onGround || _collisionDetection.onPlayer)
+        {
+            groundRemember = groundRememberTimer;
+        }
+        
+        if ((groundRemember > 0) && (jumpPressRemember > 0))
+        {
+            jumpPressRemember = 0;
+            groundRemember = 0;
             _jumpScript.StartJump();
         }
     }
