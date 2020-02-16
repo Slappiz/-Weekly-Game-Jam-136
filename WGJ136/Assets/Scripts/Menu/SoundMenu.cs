@@ -12,11 +12,18 @@ public class SoundMenu : MonoBehaviour
     void Start()
     {
         closeButton.onClick.AddListener(CloseMenu);
+        masterVolume.onValueChanged.AddListener(SetVolume);
+        masterVolume.value = 1;
     }
 
     void CloseMenu()
     {
         mainMenu.ButtonsActive();
         gameObject.SetActive(false);
+    }
+
+    void SetVolume(float value)
+    {
+        SoundManager.instance.MasterVolume(value); 
     }
 }

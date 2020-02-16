@@ -34,6 +34,14 @@ public class SoundManager : MonoBehaviour
         isMuted = true;
     }
 
+    public void MasterVolume(float percent)
+    {
+        foreach(Sound s in sounds){
+            s.source.volume =  s.volume * percent;
+        }
+        isMuted = true;       
+    }
+
     public void UnmuteSound()
     {
         foreach(Sound s in sounds){

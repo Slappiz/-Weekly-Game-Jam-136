@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject andObj = null;
+    public Image menuBackground = null;
     
     [Header("Main Buttons")]
     public Button startButton = null;
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour
         andObj.SetActive(false);
         controlsMenu.SetActive(false);
         soundMenu.SetActive(false);
+        menuBackground.enabled = false;
         
         ButtonsHide();
         Invoke("ButtonsActive", 3f);
@@ -63,6 +65,7 @@ public class MainMenu : MonoBehaviour
         controlsButton.gameObject.SetActive(true);
         soundButton.gameObject.SetActive(true); 
         andObj.SetActive(true);
+        menuBackground.enabled = true;
     }
 
     void ButtonsHide()
