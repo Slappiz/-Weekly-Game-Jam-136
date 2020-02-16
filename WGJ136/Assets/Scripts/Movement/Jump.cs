@@ -33,7 +33,9 @@ namespace WGJ136.Movement
         {
             if (rb.velocity.y < 0)
             {
-                rb.velocity += Vector2.up * (fallMultiplier - 1) * Time.deltaTime;
+                //rb.velocity += Vector2.up * (fallMultiplier - 1) * Time.deltaTime;
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                
             }
         }
     }
