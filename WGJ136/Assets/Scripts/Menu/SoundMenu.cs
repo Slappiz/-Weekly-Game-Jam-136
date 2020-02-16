@@ -13,7 +13,7 @@ public class SoundMenu : MonoBehaviour
     {
         closeButton.onClick.AddListener(CloseMenu);
         masterVolume.onValueChanged.AddListener(SetVolume);
-        masterVolume.value = 1;
+        masterVolume.value = SoundManager.instance.masterVolumeMultiplier;
     }
 
     void CloseMenu()
@@ -24,6 +24,7 @@ public class SoundMenu : MonoBehaviour
 
     void SetVolume(float value)
     {
-        SoundManager.instance.MasterVolume(value); 
+        SoundManager.instance.masterVolumeMultiplier = value;
+        SoundManager.instance.MasterVolume(); 
     }
 }

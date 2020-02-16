@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public Sound[] sounds;
     public bool unmuteOnFocus = true; 
     public bool isMuted = false;
-
+    public float masterVolumeMultiplier = 1f;
     void Awake()
     {
         if(instance == null) instance =  this;
@@ -34,10 +34,10 @@ public class SoundManager : MonoBehaviour
         isMuted = true;
     }
 
-    public void MasterVolume(float percent)
+    public void MasterVolume()
     {
         foreach(Sound s in sounds){
-            s.source.volume =  s.volume * percent;
+            s.source.volume =  s.volume * masterVolumeMultiplier;
         }
         isMuted = true;       
     }

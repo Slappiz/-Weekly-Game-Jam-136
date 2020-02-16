@@ -34,6 +34,8 @@ public class InputHandler : MonoBehaviour
     private bool isWallGrabbing = false;
     private float climbSpeed = .6f;
     
+    private int direction = 0;
+    
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -48,11 +50,16 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
         WallSlide();
-        CheckMove();
         CheckJump();
-        _jumpScript.Update(Input.GetKey(jump));
         SetAnimations();
         WallGrab();
+        CheckMove();
+    }
+
+    private void FixedUpdate()
+    {
+        _walkScript.Move(direction);
+        _jumpScript.Update();
     }
 
     private void WallSlide()
@@ -118,24 +125,24 @@ public class InputHandler : MonoBehaviour
 
     private void CheckMove()
     {
-        Vector2 direction = Vector2.zero;
+        direction = 0;
         
         if (Input.GetKey(moveLeft))
         {
-            direction.x -= 1;
+            direction = -1;
             if (reverseSpriteFlipper) _spriteRenderer.flipX = true;
             else _spriteRenderer.flipX = false;
         }
         
         if (Input.GetKey(moveRight))
         {
-            direction.x += 1;
+            direction = 1;
             
             if (reverseSpriteFlipper) _spriteRenderer.flipX = false;
             else _spriteRenderer.flipX = true;
         }
         
-        _walkScript.Move(direction);
+        //_walkScript.Move(direction);
     }
     
     void SetAnimations()

@@ -33,10 +33,14 @@ public class MenuIdleHandler : MonoBehaviour
         InvokeRepeating("CheckJump", jumpStart, jumpRepeatRate);
     }
 
-    void Update()
+    private void Update()
     {
-        _jumpScript.Update(true);
         SetAnimations();
+    }
+
+    void FixedUpdate()
+    {
+        _jumpScript.Update();
     }
 
     private void CheckJump()

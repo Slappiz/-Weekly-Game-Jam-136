@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,17 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        SoundManager.instance.Play("Lunar");
+        if(SceneManager.GetActiveScene().buildIndex == 1) SoundManager.instance.Play("Lunar");
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SoundManager.instance.Stop("Lunar");
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void FixedUpdate()
@@ -39,6 +50,14 @@ public class GameManager : MonoBehaviour
 
     private void WinGame()
     {
-        
+        if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            SoundManager.instance.Stop("Lunar");
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

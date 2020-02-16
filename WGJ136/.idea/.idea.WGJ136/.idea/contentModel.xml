@@ -26,6 +26,7 @@
             <e p="SoundManager.cs" t="Include" />
           </e>
           <e p="StayInView.cs" t="Include" />
+          <e p="TransitionToScene.cs" t="Include" />
           <e p="Trigger" t="Include">
             <e p="TriggerActivate.cs" t="Include" />
           </e>
