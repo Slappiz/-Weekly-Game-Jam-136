@@ -35,7 +35,7 @@ public class MenuIdleHandler : MonoBehaviour
 
     void Update()
     {
-        _jumpScript.Update();
+        _jumpScript.Update(true);
         SetAnimations();
     }
 

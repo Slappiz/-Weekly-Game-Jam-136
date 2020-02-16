@@ -12,22 +12,27 @@ public class InputHandler : MonoBehaviour
     public KeyCode moveLeft;
     public KeyCode moveRight;
     public KeyCode jump;
+    public KeyCode down;
 
-     [Header("Settings")] 
+    [Header("Settings")] 
     public bool reverseSpriteFlipper;
-    public float slideSpeed = .1f;
-        
+
     private Jump _jumpScript;
     private Walk _walkScript;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private CollisionDetection _collisionDetection;
-
+    
+    // Jump
     private float jumpPressRemember = 0f;
     private const float jumpPressedRememberTime = 0.2f;
     private float groundRemember = 0f;
     private const float groundRememberTimer = 0.2f;
+    
+    // Climb
+    private bool isWallGrabbing = false;
+    private float climbSpeed = .6f;
     
     private void Awake()
     {
@@ -42,21 +47,50 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
+        WallSlide();
         CheckMove();
         CheckJump();
-        _jumpScript.Update();
+        _jumpScript.Update(Input.GetKey(jump));
         SetAnimations();
-        WallSlide();
+        WallGrab();
     }
 
     private void WallSlide()
     {
-        if (!_collisionDetection.onGround && _collisionDetection.onWall)
+        if (!_collisionDetection.onGround && (_collisionDetection.onWallLeft || _collisionDetection.onWallRight))
         {
-            // _rigidbody.velocity = new Vector2(
-            //     _rigidbody.velocity.x, 
-            //     _rigidbody.velocity.y - slideSpeed * Time.deltaTime);
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0f);
+            if (_rigidbody.velocity.y < 0)
+            {
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0f);
+            }
+        }
+    }
+
+    private void WallGrab()
+    {
+        isWallGrabbing = (
+            (_collisionDetection.onWallLeft && Input.GetKey(moveLeft)) ||
+            (_collisionDetection.onWallRight && Input.GetKey(moveRight)));
+        
+        if (isWallGrabbing)
+        {
+            float directionY = 0;
+            _rigidbody.gravityScale = 0;
+            if (Input.GetKey(jump))
+            {
+                directionY += 1;
+            }
+
+            if (Input.GetKey(down))
+            {
+                directionY -= 1;
+            }
+            
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, directionY * climbSpeed);
+        }
+        else
+        {
+            _rigidbody.gravityScale = 1;
         }
     }
 

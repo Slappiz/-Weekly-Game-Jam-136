@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 6546619317644670274, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.21255371
       objectReference: {fileID: 0}
     - target: {fileID: 6546619317644670274, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.28918338
       objectReference: {fileID: 0}
     - target: {fileID: 6546619317644670274, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
         type: 3}
@@ -84,8 +84,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6546619317644670285, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
         type: 3}
-      propertyPath: reverseFlipper
-      value: 1
+      propertyPath: down
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 6546619317644670285, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
         type: 3}
@@ -102,10 +102,5 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b32becb17407c4d438b39e9c048866ac, type: 2}
-    - target: {fileID: 6546619317112308131, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c87ea0ba5e5d040b0a7b0a77c1ba6d, type: 3}

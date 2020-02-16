@@ -23,10 +23,16 @@ public class GameManager : MonoBehaviour
         if (redGoal.onPlayer && blueGoal.onPlayer)
         {
             gameWon = true;
+            
             playerBlue.enabled = false;
             playerBlue.SetHappy();
+            playerBlue.GetComponent<Rigidbody2D>().velocity = new Vector2(0, playerBlue.GetComponent<Rigidbody2D>().velocity.y);
+            
             playerRed.enabled = false;
             playerRed.SetHappy();
+            playerRed.GetComponent<Rigidbody2D>().velocity = new Vector2(0, playerRed.GetComponent<Rigidbody2D>().velocity.y);
+
+            
             Invoke("WinGame", 1f);
         }
     }

@@ -15,7 +15,8 @@ public class CollisionDetection : MonoBehaviour
 
     [Header("Debug Helper")]
     public bool onGround = false;
-    public bool onWall = false;
+    public bool onWallLeft = false;
+    public bool onWallRight = false;
     public bool onPlayer = false;
     public bool belowPlayer = false;
     public bool hideAnimDetectors = true;
@@ -26,8 +27,8 @@ public class CollisionDetection : MonoBehaviour
         onGround = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadius, groundLayer);
         onPlayer = Physics2D.OverlapCircle((Vector2) position + bottomOffset, collisionRadiusGround, playerLayer);
         belowPlayer = Physics2D.OverlapCircle((Vector2) position + topOffset, collisionRadiusGround, playerLayer);
-        onWall = Physics2D.OverlapCircle((Vector2) position + leftOffset, collisionRadius, wallLayer)
-                 || Physics2D.OverlapCircle((Vector2) position + rightOffset, collisionRadius, wallLayer);
+        onWallLeft = Physics2D.OverlapCircle((Vector2) position + leftOffset, collisionRadius, wallLayer);
+        onWallRight = Physics2D.OverlapCircle((Vector2) position + rightOffset, collisionRadius, wallLayer);
     }
     
 

@@ -8,13 +8,25 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject andObj = null;
+    
+    [Header("Main Buttons")]
     public Button startButton = null;
     public Button controlsButton = null;
     public Button soundButton = null;
-
+    
+    [Header("Controls Menu")]
+    public GameObject controlsMenu = null;
+    
+    [Header("Sound Menu")]
+    public GameObject soundMenu = null;
+    
+    
     private void Awake()
     {
         andObj.SetActive(false);
+        controlsMenu.SetActive(false);
+        soundMenu.SetActive(false);
+        
         ButtonsHide();
         Invoke("ButtonsActive", 3f);
     }
@@ -23,6 +35,8 @@ public class MainMenu : MonoBehaviour
     {
         SoundManager.instance.Play("Seafoam");
         startButton.onClick.AddListener(HandleStartButton);
+        controlsButton.onClick.AddListener(HandleControlsButton);
+        soundButton.onClick.AddListener(HandleSoundButton);
     }
 
     void HandleStartButton()
@@ -30,9 +44,20 @@ public class MainMenu : MonoBehaviour
         SoundManager.instance.Stop("Seafoam");
         SceneManager.LoadScene("Level1");
     }
+
+    void HandleControlsButton()
+    {
+        ButtonsHide();
+        controlsMenu.SetActive(true);
+    }
+
+    void HandleSoundButton()
+    {
+        ButtonsHide();
+        soundMenu.SetActive(true);
+    }
     
-    
-    void ButtonsActive()
+    public void ButtonsActive()
     {
         startButton.gameObject.SetActive(true);
         controlsButton.gameObject.SetActive(true);
