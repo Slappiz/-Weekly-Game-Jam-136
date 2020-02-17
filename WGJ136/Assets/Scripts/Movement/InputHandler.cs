@@ -32,7 +32,7 @@ public class InputHandler : MonoBehaviour
     
     // Climb
     private bool isWallGrabbing = false;
-    private float climbSpeed = .6f;
+    private float climbSpeed = .3f;
     
     private int direction = 0;
     

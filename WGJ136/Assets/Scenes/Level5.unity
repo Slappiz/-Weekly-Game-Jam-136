@@ -514,6 +514,7 @@ MonoBehaviour:
     source: {fileID: 0}
   unmuteOnFocus: 1
   isMuted: 0
+  masterVolumeMultiplier: 1
 --- !u!4 &557321604
 Transform:
   m_ObjectHideFlags: 0
@@ -639,7 +640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969734071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.339, y: -0.118, z: -0.9143056}
+  m_LocalPosition: {x: -0.339, y: -0.083, z: -0.9143056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1975016908}
@@ -805,7 +806,7 @@ PrefabInstance:
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
@@ -1092,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.375
+      value: -0.367
       objectReference: {fileID: 0}
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}

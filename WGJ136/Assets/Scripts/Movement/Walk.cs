@@ -5,7 +5,7 @@ namespace WGJ136.Movement
 {
     public class Walk
     {
-        private float speed = 50f;
+        private float speed = 30f;
 
         private Rigidbody2D rb;
 

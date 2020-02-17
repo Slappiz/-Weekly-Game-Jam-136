@@ -221,12 +221,12 @@ PrefabInstance:
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016999995
+      value: 0.055
       objectReference: {fileID: 0}
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53999996
+      value: 0.534
       objectReference: {fileID: 0}
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
@@ -365,12 +365,12 @@ PrefabInstance:
     - target: {fileID: 9163072215596063091, guid: 690809ddf943c124a9f114a18b722c6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 9163072215596063091, guid: 690809ddf943c124a9f114a18b722c6f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24
+      value: 0.2196963
       objectReference: {fileID: 0}
     - target: {fileID: 9163072215596063091, guid: 690809ddf943c124a9f114a18b722c6f,
         type: 3}
@@ -594,6 +594,7 @@ MonoBehaviour:
     source: {fileID: 0}
   unmuteOnFocus: 1
   isMuted: 0
+  masterVolumeMultiplier: 1
 --- !u!4 &557321604
 Transform:
   m_ObjectHideFlags: 0
@@ -632,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662948078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23795587, y: 0.026303714, z: -0.9143056}
+  m_LocalPosition: {x: -0.23795587, y: 0.012, z: -0.9143056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4593741993195466573}
@@ -1237,7 +1238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968793144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009208977, y: -0.3361704, z: -0.03094826}
+  m_LocalPosition: {x: 0.009208977, y: -0.35047412, z: -0.03094826}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1588191584}

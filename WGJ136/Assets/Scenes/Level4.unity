@@ -514,6 +514,7 @@ MonoBehaviour:
     source: {fileID: 0}
   unmuteOnFocus: 1
   isMuted: 0
+  masterVolumeMultiplier: 1
 --- !u!4 &557321604
 Transform:
   m_ObjectHideFlags: 0
@@ -785,7 +786,7 @@ PrefabInstance:
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.341
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 4593741993983207524, guid: 38d0b78946a456d48bf5729b8b8c67fe,
         type: 3}
